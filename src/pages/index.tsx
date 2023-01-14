@@ -1,5 +1,9 @@
 import Head from 'next/head'
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { findIconDefinition } from '@fortawesome/fontawesome-svg-core'
+const fabReact = findIconDefinition({ prefix: 'fab', iconName: 'react' })
+
 export default function Home() {
   return (
     <>
@@ -9,7 +13,10 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>next-starter</main>
+      <main>
+        <FontAwesomeIcon icon={fabReact} />
+        next-starter
+      </main>
     </>
   )
 }
