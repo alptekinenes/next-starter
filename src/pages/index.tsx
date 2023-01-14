@@ -1,4 +1,4 @@
-import Head from 'next/head'
+import { App } from '@/app/app'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { findIconDefinition } from '@fortawesome/fontawesome-svg-core'
@@ -7,16 +7,10 @@ const fabReact = findIconDefinition({ prefix: 'fab', iconName: 'react' })
 export default function Home() {
   return (
     <>
-      <Head>
-        <title>next-starter</title>
-        <meta name="description" content="Starter for Next.js" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <main>
+      <App handle="home" title="next-starter" description="Starter for Next.js">
         <FontAwesomeIcon icon={fabReact} />
         next-starter
-      </main>
+      </App>
     </>
   )
 }
