@@ -1,6 +1,8 @@
 import Head from 'next/head'
 import type { ReactNode } from 'react'
 
+import Options from '@/components/options'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { findIconDefinition } from '@fortawesome/fontawesome-svg-core'
 const farHeart = findIconDefinition({ prefix: 'far', iconName: 'heart' })
@@ -25,6 +27,7 @@ const App = (props: IAppProps) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className={`route-${props.handle}`}>
+        <Options />
         <div className={`wrap xl-flexbox xl-center xl-1 ${styles.container}`}>
           <div className="col">
             {props.children}
