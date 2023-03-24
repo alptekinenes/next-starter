@@ -1,12 +1,21 @@
 import Link from 'next/link'
 import { useIntl } from 'react-intl'
 import { useRouter } from 'next/router'
+import { useEffect } from 'react'
+import { removeOldLocalStorageData } from '@/modules/utils'
+import { useOptionsStore } from '@/modules/options/store'
 
 import styles from '@/assets/styles/components/options.module.scss'
 
 const Options = () => {
   const { formatMessage } = useIntl()
   const { locale, locales, asPath } = useRouter()
+  const optionsStore = useOptionsStore()
+
+  useEffect(() => {
+    removeOldLocalStorageData(optionsStore.storeName, optionsStore.storeVersion)
+    if (!optionsStore.locale) optionsStore.changeLocale(`${locale}`)
+  })
 
   return (
     <div className={styles.options}>
@@ -18,8 +27,9 @@ const Options = () => {
           <div className="col" key={l}>
             <Link href={asPath} locale={l} legacyBehavior>
               <a
+                onClick={() => optionsStore.changeLocale(l)}
                 className={`${styles['options-item']} ${
-                  locale == l ? styles.active : ''
+                  optionsStore.locale == l ? styles.active : ''
                 }`}
               >
                 {l.toLocaleUpperCase()}
