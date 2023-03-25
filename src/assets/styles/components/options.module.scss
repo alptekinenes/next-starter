@@ -32,3 +32,15 @@
     background-color: var(--gray-300);
   }
 }
+.options-footer {
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  left: 0;
+  text-align: center;
+  padding: 8rem 0;
+  font-family: var(--source-code-pro);
+  font-size: 12rem;
+  line-height: 20rem;
+  color: var(--gray-500);
+}
