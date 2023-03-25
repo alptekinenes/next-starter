@@ -11,10 +11,10 @@ const Options = () => {
   const { formatMessage } = useIntl()
   const { locale, locales, asPath } = useRouter()
   const optionsStore = useOptionsStore()
+  if (!optionsStore.locale) optionsStore.changeLocale(`${locale}`)
 
   useEffect(() => {
     removeOldLocalStorageData(optionsStore.storeName, optionsStore.storeVersion)
-    if (!optionsStore.locale) optionsStore.changeLocale(`${locale}`)
   })
 
   return (
@@ -29,7 +29,7 @@ const Options = () => {
               <a
                 onClick={() => optionsStore.changeLocale(l)}
                 className={`${styles['options-item']} ${
-                  optionsStore.locale == l ? styles.active : ''
+                  locale == l ? styles.active : ''
                 }`}
               >
                 {l.toLocaleUpperCase()}
@@ -37,6 +37,16 @@ const Options = () => {
             </Link>
           </div>
         ))}
+      </div>
+      <div className={styles['options-footer']}>
+        <div>optionsStore</div>
+        <div>
+          name: {optionsStore.storeName}_v{optionsStore.storeVersion}
+        </div>
+        <div>
+          locale:{' '}
+          <span suppressHydrationWarning={true}>{optionsStore.locale}</span>
+        </div>
       </div>
     </div>
   )
