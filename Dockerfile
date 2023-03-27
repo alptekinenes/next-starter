@@ -8,4 +8,9 @@ RUN npm install
 
 ADD .eslintrc.json .prettierrc.json next.config.js tsconfig.json ./
 
-CMD ["npm", "run", "dev"]
+COPY src ./src
+COPY public ./public
+
+RUN npm run build
+
+CMD ["npm", "run", "start"]
