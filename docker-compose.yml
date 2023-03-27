@@ -5,8 +5,25 @@ services:
     container_name: next-starter
     build:
       dockerfile: dev.Dockerfile
+    labels:
+      - 'traefik.enable=true'
+      - 'traefik.http.routers.next-starter.rule=Host(`${DOMAIN:-next-starter.localhost}`)'
+      - 'traefik.http.routers.next-starter.entrypoints=web'
     ports:
-      - 3000:3000
+      - 3001:3000
     volumes:
       - ./src:/app/src
       - ./public:/app/public
+  load-balancer:
+    image: traefik:2.9
+    container_name: load-balancer
+    command:
+      - '--api.insecure=true'
+      - '--providers.docker=true'
+      - '--providers.docker.exposedbydefault=false'
+      - '--entrypoints.web.address=:80'
+    ports:
+      - '80:80'
+      - '8080:8080'
+    volumes:
+      - '/var/run/docker.sock:/var/run/docker.sock:ro'
