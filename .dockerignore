@@ -3,9 +3,9 @@
 .gitignore
 .next
 .vscode
-dev.Dockerfile
 docker-compose.yml
 Dockerfile
+Dockerfile.dev
 LICENSE
 next-env.d.ts
 node_modules

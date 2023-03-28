@@ -4,7 +4,7 @@ services:
     image: next-starter
     container_name: next-starter
     build:
-      dockerfile: dev.Dockerfile
+      dockerfile: Dockerfile.dev
     labels:
       - 'traefik.enable=true'
       - 'traefik.http.routers.next-starter.rule=Host(`${DOMAIN:-next-starter.localhost}`)'
