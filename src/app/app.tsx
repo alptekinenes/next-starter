@@ -32,18 +32,20 @@ const App = (props: IAppProps) => {
           <div className="col">
             {props.children}
             <a
-              className={`${styles.dnomak} wrap xl-auto xl-middle xl-center xl-gutter-4`}
+              className={styles.dnomak}
               href="https://github.com/dnomak"
               target="_blank"
               rel="noreferrer"
             >
-              <span className="col">I</span>
-              <span className={`col ${styles.love} ${styles.icon}`}>
-                <FontAwesomeIcon icon={farHeart} />
-                <FontAwesomeIcon icon={fasHeart} />
+              <span className="wrap xl-auto xl-middle xl-center xl-gutter-4">
+                <span className="col">I</span>
+                <span className={`col ${styles.love} ${styles.icon}`}>
+                  <FontAwesomeIcon icon={farHeart} />
+                  <FontAwesomeIcon icon={fasHeart} />
+                </span>
+                <span className={`col ${styles.love}`}>Love</span>
+                <span className="col">JavaScript</span>
               </span>
-              <span className={`col ${styles.love}`}>Love</span>
-              <span className="col">JavaScript</span>
             </a>
           </div>
         </div>
