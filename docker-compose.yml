@@ -16,7 +16,7 @@ services:
       - ./public:/app/public
   load-balancer:
     image: traefik:2.9
-    container_name: load-balancer
+    container_name: next-starter-load-balancer
     command:
       - '--api.insecure=true'
       - '--providers.docker=true'
