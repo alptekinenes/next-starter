@@ -21,6 +21,7 @@ const App = (props: IAppProps) => {
   return (
     <>
       <Head>
+        <meta name="robots" content="noindex" />
         <title>{props.title}</title>
         <meta name="description" content={props.description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
