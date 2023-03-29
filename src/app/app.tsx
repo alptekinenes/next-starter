@@ -34,7 +34,7 @@ const App = (props: IAppProps) => {
             {props.children}
             <a
               className={styles.dnomak}
-              href="https://github.com/dnomak"
+              href="https://github.com/dnomak/next-starter"
               target="_blank"
               rel="noreferrer"
             >
