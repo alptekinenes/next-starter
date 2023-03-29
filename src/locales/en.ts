@@ -2,4 +2,5 @@
 export default {
   Language: 'English',
   'LANGUAGE OPTIONS:': 'LANGUAGE OPTIONS:',
+  'Starter for Next.js': 'Starter for Next.js',
 }

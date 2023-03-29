@@ -2,4 +2,5 @@
 export default {
   Language: 'Türkçe',
   'LANGUAGE OPTIONS:': 'DİL SEÇENEKLERİ:',
+  'Starter for Next.js': 'Next.js için Başlangıç',
 }
