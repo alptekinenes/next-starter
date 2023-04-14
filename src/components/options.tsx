@@ -1,11 +1,11 @@
 import Link from 'next/link'
-import { useIntl } from 'react-intl'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
-import { removeOldLocalStorageData } from '@/modules/utils'
-import { useOptionsStore } from '@/modules/options/store'
+import { useIntl } from 'react-intl'
 
 import styles from '@/assets/styles/components/options.module.scss'
+import { useOptionsStore } from '@/modules/options/store'
+import { removeOldLocalStorageData } from '@/modules/utils'
 
 const Options = () => {
   const { formatMessage } = useIntl()

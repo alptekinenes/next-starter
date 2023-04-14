@@ -1,11 +1,11 @@
 import '@/assets/styles/index.scss'
+import '@/app/modules/font-awesome'
 
+import type { AppContext, AppProps } from 'next/app'
 import App from 'next/app'
 import { IntlProvider } from 'react-intl'
-import type { AppContext, AppProps } from 'next/app'
 
 import i18n from '@/app/modules/i18n'
-import '@/app/modules/font-awesome'
 
 interface MyAppProps extends AppProps {
   data: any

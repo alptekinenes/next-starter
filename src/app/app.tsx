@@ -1,10 +1,9 @@
+import { findIconDefinition } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Head from 'next/head'
 import type { ReactNode } from 'react'
 
 import Options from '@/components/options'
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { findIconDefinition } from '@fortawesome/fontawesome-svg-core'
 const farHeart = findIconDefinition({ prefix: 'far', iconName: 'heart' })
 const fasHeart = findIconDefinition({ prefix: 'fas', iconName: 'heart' })
 
