@@ -14,7 +14,6 @@ const Options = () => {
   const { formatMessage } = useIntl()
   const { locale, locales, asPath } = useRouter()
   const optionsStore = useOptionsStore()
-  if (!optionsStore.locale) optionsStore.changeLocale(`${locale}`)
 
   return (
     <div className={styles.options}>

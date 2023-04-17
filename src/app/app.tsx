@@ -1,6 +1,7 @@
 import { findIconDefinition } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 import type { ReactNode } from 'react'
 import { useEffect } from 'react'
 
@@ -20,7 +21,11 @@ type IAppProps = {
 }
 
 const App = (props: IAppProps) => {
+  const { locale } = useRouter()
+
   const optionsStore = useOptionsStore()
+  if (!optionsStore.locale) optionsStore.changeLocale(`${locale}`)
+
   useEffect(() => {
     removeOldLocalStorageData(optionsStore.storeName, optionsStore.storeVersion)
   })
