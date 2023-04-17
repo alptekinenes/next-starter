@@ -25,7 +25,7 @@ const Options = () => {
           <div className="col" key={l}>
             <Link href={asPath} locale={l} legacyBehavior>
               <a
-                onClick={() => optionsStore.changeLocale(l)}
+                onClick={() => optionsStore.setLocale(l)}
                 className={`${styles['options-item']} ${
                   locale == l ? styles.active : ''
                 }`}

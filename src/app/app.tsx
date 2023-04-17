@@ -24,7 +24,7 @@ const App = (props: IAppProps) => {
   const { locale } = useRouter()
 
   const optionsStore = useOptionsStore()
-  if (!optionsStore.locale) optionsStore.changeLocale(`${locale}`)
+  if (!optionsStore.locale) optionsStore.setLocale(`${locale}`)
 
   useEffect(() => {
     removeOldLocalStorageData(optionsStore.storeName, optionsStore.storeVersion)

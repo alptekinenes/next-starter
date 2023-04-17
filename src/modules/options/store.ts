@@ -8,7 +8,7 @@ interface OptionsStore {
   storeName: string
   storeVersion: string
   locale: string
-  changeLocale: (value: string) => void
+  setLocale: (value: string) => void
 }
 
 export const useOptionsStore = create<OptionsStore>()(
@@ -18,7 +18,7 @@ export const useOptionsStore = create<OptionsStore>()(
         storeName: storeName,
         storeVersion: storeVersion,
         locale: '',
-        changeLocale: value => set({ locale: value }),
+        setLocale: value => set({ locale: value }),
       }),
       {
         name: `${storeName}_v${storeVersion}`,
