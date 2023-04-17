@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useIntl } from 'react-intl'
 
 import styles from '@/assets/styles/components/options.module.scss'
@@ -8,6 +8,10 @@ import { useOptionsStore } from '@/modules/options/store'
 import { removeOldLocalStorageData } from '@/modules/utils'
 
 const Options = () => {
+  const [hasHydrated, setHasHydrated] = useState(false)
+  useEffect(() => {
+    setHasHydrated(true)
+  }, [])
   const { formatMessage } = useIntl()
   const { locale, locales, asPath } = useRouter()
   const optionsStore = useOptionsStore()
@@ -38,16 +42,17 @@ const Options = () => {
           </div>
         ))}
       </div>
-      <div className={styles['options-footer']}>
-        <div>optionsStore</div>
-        <div>
-          name: {optionsStore.storeName}_v{optionsStore.storeVersion}
+      {hasHydrated && (
+        <div className={styles['options-footer']}>
+          <div>optionsStore</div>
+          <div>
+            name: {optionsStore.storeName}_v{optionsStore.storeVersion}
+          </div>
+          <div>
+            locale: <span>{optionsStore.locale}</span>
+          </div>
         </div>
-        <div>
-          locale:{' '}
-          <span suppressHydrationWarning={true}>{optionsStore.locale}</span>
-        </div>
-      </div>
+      )}
     </div>
   )
 }
