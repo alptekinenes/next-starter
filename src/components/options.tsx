@@ -5,7 +5,6 @@ import { useIntl } from 'react-intl'
 
 import styles from '@/assets/styles/components/options.module.scss'
 import { useOptionsStore } from '@/modules/options/store'
-import { removeOldLocalStorageData } from '@/modules/utils'
 
 const Options = () => {
   const [hasHydrated, setHasHydrated] = useState(false)
@@ -16,10 +15,6 @@ const Options = () => {
   const { locale, locales, asPath } = useRouter()
   const optionsStore = useOptionsStore()
   if (!optionsStore.locale) optionsStore.changeLocale(`${locale}`)
-
-  useEffect(() => {
-    removeOldLocalStorageData(optionsStore.storeName, optionsStore.storeVersion)
-  })
 
   return (
     <div className={styles.options}>

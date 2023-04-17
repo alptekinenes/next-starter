@@ -2,12 +2,15 @@ import { findIconDefinition } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Head from 'next/head'
 import type { ReactNode } from 'react'
+import { useEffect } from 'react'
 
 import Options from '@/components/options'
 const farHeart = findIconDefinition({ prefix: 'far', iconName: 'heart' })
 const fasHeart = findIconDefinition({ prefix: 'fas', iconName: 'heart' })
 
 import styles from '@/app/app.module.scss'
+import { useOptionsStore } from '@/modules/options/store'
+import { removeOldLocalStorageData } from '@/modules/utils'
 
 type IAppProps = {
   handle: string
@@ -17,6 +20,11 @@ type IAppProps = {
 }
 
 const App = (props: IAppProps) => {
+  const optionsStore = useOptionsStore()
+  useEffect(() => {
+    removeOldLocalStorageData(optionsStore.storeName, optionsStore.storeVersion)
+  })
+
   return (
     <>
       <Head>
