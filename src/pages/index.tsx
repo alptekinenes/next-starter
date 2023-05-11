@@ -9,11 +9,7 @@ export default function Home() {
 
   return (
     <>
-      <App
-        handle="home"
-        title="next-starter"
-        description={formatMessage({ id: 'Starter for Next.js' })}
-      >
+      <App handle="home" title="next-starter" description={formatMessage({ id: 'Starter for Next.js' })}>
         <h1>next-starter</h1>
       </App>
     </>

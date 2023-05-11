@@ -9,11 +9,7 @@ export default function NotFound() {
 
   return (
     <>
-      <App
-        handle="not-found"
-        title="404 - next-starter"
-        description={formatMessage({ id: 'Page not found.' })}
-      >
+      <App handle="not-found" title="404 - next-starter" description={formatMessage({ id: 'Page not found.' })}>
         <h1>{formatMessage({ id: 'Page not found.' })}</h1>
       </App>
     </>

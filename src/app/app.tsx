@@ -44,12 +44,7 @@ const App = (props: IAppProps) => {
         <div className={`wrap xl-flexbox xl-center xl-1 ${styles.container}`}>
           <div className="col">
             {props.children}
-            <a
-              className={styles.dnomak}
-              href="https://github.com/dnomak/next-starter"
-              target="_blank"
-              rel="noreferrer"
-            >
+            <a className={styles.dnomak} href="https://github.com/dnomak/next-starter" target="_blank" rel="noreferrer">
               <span className="wrap xl-auto xl-middle xl-center xl-gutter-4">
                 <span className="col">I</span>
                 <span className={`col ${styles.love} ${styles.icon}`}>

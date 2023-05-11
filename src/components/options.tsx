@@ -17,19 +17,14 @@ const Options = () => {
 
   return (
     <div className={styles.options}>
-      <div className={styles['options-title']}>
-        {formatMessage({ id: 'LANGUAGE OPTIONS:' })}
-      </div>
+      <div className={styles['options-title']}>{formatMessage({ id: 'LANGUAGE OPTIONS:' })}</div>
       <div className="wrap xl-2 xl-gutter-8">
         {locales?.map(l => (
           <div className="col" key={l}>
             <Link href={asPath} locale={l} legacyBehavior>
               <a
                 onClick={() => optionsStore.setLocale(l)}
-                className={`${styles['options-item']} ${
-                  locale == l ? styles.active : ''
-                }`}
-              >
+                className={`${styles['options-item']} ${locale == l ? styles.active : ''}`}>
                 {l.toLocaleUpperCase()}
               </a>
             </Link>

@@ -13,11 +13,7 @@ interface MyAppProps extends AppProps {
 
 function MyApp({ Component, pageProps, router, data }: MyAppProps) {
   return (
-    <IntlProvider
-      defaultLocale={router.defaultLocale}
-      locale={router.locale as string}
-      messages={data}
-    >
+    <IntlProvider defaultLocale={router.defaultLocale} locale={router.locale as string} messages={data}>
       <Component {...pageProps} />
     </IntlProvider>
   )
