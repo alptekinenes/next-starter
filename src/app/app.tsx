@@ -9,7 +9,7 @@ import Options from '@/components/options'
 const farHeart = findIconDefinition({ prefix: 'far', iconName: 'heart' })
 const fasHeart = findIconDefinition({ prefix: 'fas', iconName: 'heart' })
 
-import styles from '@/app/app.module.scss'
+import styles from '@/assets/styles/components/app.module.scss'
 import { useOptionsStore } from '@/modules/options/store'
 import { removeOldLocalStorageData } from '@/modules/utils'
 
