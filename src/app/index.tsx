@@ -9,9 +9,9 @@ import Options from '@/components/options'
 const farHeart = findIconDefinition({ prefix: 'far', iconName: 'heart' })
 const fasHeart = findIconDefinition({ prefix: 'fas', iconName: 'heart' })
 
-import styles from '@/assets/styles/components/app.module.scss'
-import { useOptionsStore } from '@/modules/options/store'
-import { removeOldLocalStorageData } from '@/modules/utils'
+import styles from '@/assets/styles/layouts/app.module.scss'
+import { useOptionsStore } from '@/stores/options/store'
+import { removeOldLocalStorageData } from '@/stores/utils'
 
 type IAppProps = {
   handle: string

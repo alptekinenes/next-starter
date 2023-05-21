@@ -2,7 +2,7 @@ import '@/assets/styles/pages/not-found.scss'
 
 import { useIntl } from 'react-intl'
 
-import { App } from '@/app/app'
+import { App } from '@/app'
 
 export default function NotFound() {
   const { formatMessage } = useIntl()

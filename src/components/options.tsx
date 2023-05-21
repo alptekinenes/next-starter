@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { useIntl } from 'react-intl'
 
 import styles from '@/assets/styles/components/options.module.scss'
-import { useOptionsStore } from '@/modules/options/store'
+import { useOptionsStore } from '@/stores/options/store'
 
 const Options = () => {
   const [hasHydrated, setHasHydrated] = useState(false)

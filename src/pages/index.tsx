@@ -2,7 +2,7 @@ import '@/assets/styles/pages/home.scss'
 
 import { useIntl } from 'react-intl'
 
-import { App } from '@/app/app'
+import { App } from '@/app'
 
 export default function Home() {
   const { formatMessage } = useIntl()
