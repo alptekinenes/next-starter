@@ -1,5 +1,5 @@
 import '@/assets/styles/index.scss'
-import '@/app/modules/font-awesome'
+import '@/app/modules/icons'
 
 import type { AppContext, AppProps } from 'next/app'
 import App from 'next/app'
